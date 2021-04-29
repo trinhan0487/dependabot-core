@@ -1,0 +1,99 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/common"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  reviewers:
+  - greysteil
+- package-ecosystem: composer
+  directory: "/composer/helpers"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: phpstan/phpstan
+    versions:
+    - 0.12.70
+    - 0.12.71
+    - 0.12.72
+    - 0.12.73
+    - 0.12.74
+    - 0.12.75
+    - 0.12.76
+    - 0.12.77
+    - 0.12.78
+    - 0.12.79
+    - 0.12.80
+    - 0.12.81
+    - 0.12.82
+    - 0.12.83
+    - 0.12.84
+- package-ecosystem: mix
+  directory: "/hex/helpers"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+- package-ecosystem: npm
+  directory: "/npm_and_yarn/helpers"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: eslint
+    versions:
+    - 7.18.0
+    - 7.19.0
+    - 7.20.0
+    - 7.21.0
+    - 7.22.0
+    - 7.23.0
+    - 7.24.0
+  - dependency-name: nock
+    versions:
+    - 13.0.10
+    - 13.0.6
+    - 13.0.7
+    - 13.0.8
+    - 13.0.9
+  - dependency-name: eslint-plugin-prettier
+    versions:
+    - 3.3.1
+  - dependency-name: semver
+    versions:
+    - 7.3.4
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: handlebars
+    versions:
+    - 4.7.6
+- package-ecosystem: pip
+  directory: "/python/helpers"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: pip-tools
+    versions:
+    - 5.5.0
+    - 6.0.0
+    - 6.0.1
+  - dependency-name: poetry
+    versions:
+    - 1.1.4
+    - 1.1.5
+  - dependency-name: cython
+    versions:
+    - 0.29.21
+    - 0.29.22
+  - dependency-name: pip
+    versions:
+    - "21.0"
+    - 21.0.1
+- package-ecosystem: gomod
+  directory: "/go_modules/helpers"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
